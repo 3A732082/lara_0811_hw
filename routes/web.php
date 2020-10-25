@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,5 +18,5 @@ use Illuminate\Support\Facades\Route;
     return view('welcome');
 });*/
 Route::get('/',[HomeController::class,'index'])->name('home.index');
-Route::get('/about',[HomeController::class,'index'])->name('about.index');
-Route::get('/news',[HomeController::class,'index'])->name('news.index');
+Route::get('/about',[\App\Http\Controllers\AboutController::class,'index'])->name('about.index');
+Route::get('/news',[\App\Http\Controllers\NewsController::class,'index'])->name('news.index');
